@@ -4,10 +4,24 @@
 {% block content %}
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-5">
+    <div class="col-md-10 col-lg-7">
         <h1>A pirate's life is for me</h1>
         <p>Hempen halter mizzenmast deadlights gaff pillage starboard jack lee Blimey draught. Man-of-war piracy black jack sutler Yellow Jack keel provost overhaul execution dock rigging. Log quarterdeck dead men tell no tales red ensign gibbet grog blossom bilge Nelsons folly code of conduct gunwalls.</p>
     </div>
   </div>
+</div>
+
+<div class="row justify-content-center">
+  {% for entry in blog.blogs%}
+  <div class="col-md-8 col-lg-6 g-4">
+    <div class="card text-bg-dark">
+      <div class="card-body">
+        <h5 class="card-title">{{ entry.headline}}</h5>
+        <h6 class="card-date">{{entry.date}}</h6>
+        <a href="blog/{{ entry.slug }}.html" class="card-link">Read entry here.</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
 {% endblock %}
